@@ -1,8 +1,8 @@
 <section id="intro">
-  <h1 id="intro-hed">Title Of The Article</h1>
-  <h1 class="intro-sub">Subtitle of the article.</h1>
+  <h1 id="intro-hed">Understanding Global Alcohol Consumption</h1>
+  <h1 class="intro-sub">A project for DSC 106: Intro to Data Visualization at UC San Diego</h1>
   <h3 id="intro__date">
-    <a href="https://twitter.com/" target="_blank">Author Name</a>, Month Year
+    Authored by Ifunanya Okoroma, Antara Sengupta, and Suhani Sharma
   </h3>
 </section>
 
