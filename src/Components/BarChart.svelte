@@ -217,5 +217,3 @@
 </div>
 <h2 id="chartHeading">Alcohol Consumption in USA</h2>
 <div id="my_dataviz"></div>
-
-

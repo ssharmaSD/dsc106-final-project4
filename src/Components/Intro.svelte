@@ -3,7 +3,7 @@
 
 <section>
   <p class="body-text">
-    Lorem ipsum dolor sit amet <a href="">random link</a> adipisicing elit. Esse
+    Lorem ipsum dolor sit amet <a href="https://dsc106.com/">random link</a> adipisicing elit. Esse
     dolor nobis
     <span class="bold">bold text</span> eius voluptate distinctio odit ut quod illo!
     Nulla consequatur fugiat quia commodi aspernatur necessitatibus est doloremque
