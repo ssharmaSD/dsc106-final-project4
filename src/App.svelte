@@ -3,7 +3,7 @@
   import Title from "./Components/Title.svelte";
   import Intro from "./Components/Intro.svelte";
   import TextAndMathEquations from "./Components/TextAndMathEquations.svelte";
-  import LineChart from "./Components/LineChart.svelte";
+  import BarChart from "./Components/BarChart.svelte";
   import ScrollCenter from "./Components/ScrollCenter.svelte";
   import Conclusion from "./Components/Conclusion.svelte";
   import Resources from "./Components/Resources.svelte";
@@ -15,7 +15,7 @@
 <Intro />
 <TextAndMathEquations />
 <ScrollSide />
-<LineChart />
+<BarChart />
 <ScrollCenter />
 <Conclusion />
 <Resources />
