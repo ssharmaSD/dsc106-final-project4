@@ -20,10 +20,13 @@
   }
 
   onMount(() => {
-    const svg = select('#my_dataviz')
+    const svg = select('#cont_dataviz')
       .append('svg')
       .attr('width', width)
       .attr('height', height)
+      .attr('viewBox', `0 0 ${width} ${height}`)
+      .style('margin', 'auto')
+      .style('display', 'block')
       .append('g')
       .attr('transform', `translate(${margin.left},${margin.top})`);
 
@@ -190,37 +193,69 @@
     max-width: 200px;
     word-wrap: break-word;
   }
+
+  #my_dataviz {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  svg {
+    display: block;
+    margin: auto;
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .container label,
+  .container select {
+    margin-top: 10px;
+  }
+
+  h2 {
+    margin-bottom: 10px;
+  }
+
+  .body-header {
+    text-align: center;
+  }
 </style>
 
-<h1 class="body-header">Alcohol Type Consumption by Continent in Modern Day</h1>
+<div class="container">
+  <h1 class="body-header">Alcohol Type Consumption by Continent in Modern Day</h1>
+  <p class="body-text">
+    With an understanding of how alcohol consumption began in ancient times, let us explore how it looks in modern day.
+  </p>
 
-<p class="body-text">
-  With an understanding of how alcohol consumption began in ancient times, let us explore how it looks in modern day.
-</p>
+  <p class="user">
+    <strong>Now it's your turn to explore!</strong>
+  </p>
 
-<p class="user">
-  <strong>Now it's your turn to explore!</strong>
-</p>
+  <p class="body-text">
+    Choose a continent from the dropdown 
+    to generate a bar chart describing different consumption rates of different 
+    alcohol types of your chosen continent.
+  </p>
 
-<p class="body-text">
-  Choose a continent from the dropdown 
-  to generate a bar chart describing different consumption rates of different 
-  alcohol types of your chosen continent.
-</p>
+  <p class="body-text">
+    The original data set can be found from this 
+    <a href="https://github.com/fivethirtyeight/data/tree/master/alcohol-consumption">fivethirtyeight</a> link. 
+  </p>
 
-<p class="body-text">
-  The original data set can be found from this 
-  <a href="https://github.com/fivethirtyeight/data/tree/master/alcohol-consumption">fivethirtyeight</a> link. 
-</p>
+  <p class="body-text">
+    <strong>Note:</strong> We have had a lot of trouble trying to get this bar chart to center,
+    any guidance that could be provided on this would be greatly appreciated. Thanks!
+  </p>
 
-<p class="body-text">
-  <strong>Note:</strong> We have had a lot of trouble trying to get this bar chart to center,
-  any guidance that could be provided on this would be greatly appreciated. Thanks!
-</p>
-
-<div>
-  <label for="continentDropdown">Select a continent: </label>
-  <select id="continentDropdown"></select>
+  <h2 id="chartHeading">Alcohol Consumption in North America</h2>
+  <div>
+    <label for="continentDropdown">Select a continent: </label>
+    <select id="continentDropdown"></select>
+  </div>
+  <div id="cont_dataviz"></div>
 </div>
-<h2 id="chartHeading">Alcohol Consumption in North America</h2>
-<div id="my_dataviz"></div>

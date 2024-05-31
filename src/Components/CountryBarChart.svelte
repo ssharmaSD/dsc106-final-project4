@@ -16,7 +16,7 @@
   let countries = [];
 
   function updateHeading(country) {
-    select('#chartHeading').text(`Alcohol Consumption in ${country}`);
+    select('#chartHeading1').text(`Alcohol Consumption in ${country}`);
   }
 
   onMount(() => {
@@ -201,6 +201,10 @@
     display: block;
     margin: auto;
   }
+
+  .body-header {
+    text-align: center;
+  }
 </style>
 
 <div class="container">
@@ -230,7 +234,7 @@
     any guidance that could be provided on this would be greatly appreciated. Thanks!
   </p>
 
-  <h2 id="chartHeading">Alcohol Consumption in USA</h2>
+  <h2 id="chartHeading1">Alcohol Consumption in USA</h2>
   <div>
     <label for="countryDropdown">Select a country: </label>
     <select id="countryDropdown"></select>

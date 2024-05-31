@@ -3,8 +3,12 @@
   import Title from "./Components/Title.svelte";
   import Intro from "./Components/Intro.svelte";
   import TextAndMathEquations from "./Components/TextAndMathEquations.svelte";
-  import CountryBarChart from "./Components/CountryBarChart.svelte";
-  import ContinentBarChart from "./Components/ContinentBarChart.svelte";
+
+
+  import CountryBar from "./Components/CountryBarChart.svelte";
+  import ContinentBar from "./Components/ContinentBarChart.svelte";
+
+
   import ScrollCenter from "./Components/ScrollCenter.svelte";
   import Conclusion from "./Components/Conclusion.svelte";
   import Resources from "./Components/Resources.svelte";
@@ -16,9 +20,9 @@
 <Intro />
 
 <ScrollSide />
-<CountryBarChart />
+<CountryBar />
 
-<ContinentBarChart />
+<ContinentBar />
 
 <Conclusion />
 <Resources />
