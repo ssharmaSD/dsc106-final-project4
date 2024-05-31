@@ -30,19 +30,6 @@
       .append('g')
       .attr('transform', `translate(${margin.left},${margin.top})`);
 
-    const tooltip = select('body')
-      .append('div')
-      .attr('class', 'tooltip')
-      .style('opacity', 0)
-      .style('position', 'absolute')
-      .style('background-color', 'lightgray')
-      .style('border', '1px solid gray')
-      .style('padding', '5px')
-      .style('font-size', '16px')
-      .style('pointer-events', 'none')
-      .style('max-width', '200px')
-      .style('word-wrap', 'break-word');
-
     fetch("/continent.csv")
       .then(response => response.text())
       .then(text => {
@@ -123,36 +110,40 @@
             .selectAll('text')
             .style('font-weight', 'bold');
 
-          svg.selectAll('.bar')
+          // Add horizontal grid lines
+          svg.append('g')
+            .attr('class', 'grid')
+            .call(d3.axisLeft(y)
+              .tickSize(-innerWidth)
+              .tickFormat(''));
+
+          const bars = svg.selectAll('.bar')
             .data(barData)
             .enter()
-            .append('rect')
+            .append('g');
+
+          bars.append('rect')
             .attr('class', 'bar')
             .attr('x', d => x(d.label))
             .attr('width', x.bandwidth())
             .attr('fill', d => d.color)
             .attr('y', y(0))
             .attr('height', d => innerHeight - y(0))
-            .on('mouseover', function(event, d) {
-              select(this).style('fill', 'orange');
-              tooltip.transition().duration(200).style('opacity', 0.9);
-              tooltip.html(`Annually in ${selectedContinent} the average amount of ${d.label.toLowerCase()} is ${d.value} servings.`)
-                .style('left', `${event.pageX + 5}px`)
-                .style('top', `${event.pageY - 28}px`);
-            })
-            .on('mousemove', function(event) {
-              tooltip.style('left', `${event.pageX + 5}px`)
-                .style('top', `${event.pageY - 28}px`);
-            })
-            .on('mouseout', function(event, d) {
-              select(this).style('fill', d.color);
-              tooltip.transition().duration(500).style('opacity', 0);
-            })
             .transition()
             .duration(800)
             .attr('y', d => y(d.value))
             .attr('height', d => innerHeight - y(d.value))
             .delay((d, i) => i * 100);
+
+          bars.append('text')
+            .attr('class', 'label')
+            .attr('x', d => x(d.label) + x.bandwidth() / 2)
+            .attr('y', d => y(d.value) - 13)
+            .attr('dy', '.75em')
+            .text(d => d.value)
+            .attr('text-anchor', 'middle')
+            .style('font-size', '16px')
+            .style('font-weight', 'bold');
         }
       })
       .catch(error => {
@@ -160,6 +151,7 @@
       });
   });
 </script>
+
 
 <style>
   .user {

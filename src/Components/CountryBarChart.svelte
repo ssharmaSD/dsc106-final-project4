@@ -15,8 +15,114 @@
   let selectedCountry = 'USA';
   let countries = [];
 
+  // Define button texts and corresponding countries
+  const buttonRecords = [
+    { text: 'Country with the most consumption', country: 'Andorra' },
+    { text: 'Country with the least consumption', country: 'Afghanistan' },
+    { text: 'Country that drinks the most beer', country: 'Namibia' }
+  ];
+
   function updateHeading(country) {
     select('#chartHeading1').text(`Alcohol Consumption in ${country}`);
+  }
+
+  function updateChart(country) {
+    fetch("/drinks.csv")
+      .then(response => response.text())
+      .then(text => {
+        const data = d3.csvParse(text);
+        data.forEach(d => {
+          d.beer_servings = +d.beer_servings;
+          d.spirit_servings = +d.spirit_servings;
+          d.wine_servings = +d.wine_servings;
+          d.total_litres_of_pure_alcohol = +d.total_litres_of_pure_alcohol;
+        });
+
+        const countryData = data.find(d => d.country === country);
+        if (!countryData) {
+          console.error('Country not found in data.');
+          return;
+        }
+
+        const barData = [
+          { label: 'Beer Servings', value: countryData.beer_servings, color: '#a35108' },
+          { label: 'Spirit Servings', value: countryData.spirit_servings, color: '#a8e1e3' },
+          { label: 'Wine Servings', value: countryData.wine_servings, color: '#8a0101' },
+        ];
+
+        const x = scaleBand()
+          .range([0, innerWidth])
+          .domain(barData.map(d => d.label))
+          .padding(0.2);
+
+        const svg = select('#my_dataviz svg g');
+
+        svg.selectAll('*').remove();
+
+        svg.append('g')
+          .attr('transform', `translate(0,${innerHeight})`)
+          .call(axisBottom(x))
+          .selectAll('text')
+          .attr('transform', 'translate(-10,0)rotate(-45)')
+          .style('text-anchor', 'end')
+          .style('font-size', '14px')
+          .style('font-weight', 'bold');
+
+        const y = scaleLinear()
+          .domain([0, d3.max(barData, d => d.value)])
+          .nice()
+          .range([innerHeight, 0]);
+
+        svg.append('g')
+          .call(axisLeft(y))
+          .selectAll('text')
+          .style('font-weight', 'bold');
+
+        // Add horizontal grid lines
+        svg.append('g')
+          .attr('class', 'grid')
+          .call(d3.axisLeft(y)
+            .tickSize(-innerWidth)
+            .tickFormat(''));
+
+        const bars = svg.selectAll('.bar')
+          .data(barData)
+          .enter()
+          .append('g');
+
+        bars.append('rect')
+          .attr('class', 'bar')
+          .attr('x', d => x(d.label))
+          .attr('width', x.bandwidth())
+          .attr('fill', d => d.color)
+          .attr('y', y(0))
+          .attr('height', d => innerHeight - y(0))
+          .transition()
+          .duration(800)
+          .attr('y', d => y(d.value))
+          .attr('height', d => innerHeight - y(d.value))
+          .delay((d, i) => i * 100);
+
+        bars.append('text')
+          .attr('class', 'label')
+          .attr('x', d => x(d.label) + x.bandwidth() / 2)
+          .attr('y', d => y(d.value) - 13)
+          .attr('dy', '.75em')
+          .text(d => d.value)
+          .attr('text-anchor', 'middle')
+          .style('font-size', '16px')
+          .style('font-weight', 'bold');
+      })
+      .catch(error => {
+        console.error('Error loading the CSV file:', error);
+      });
+  }
+
+  function handleButtonClick(country) {
+    selectedCountry = country;
+    updateChart(country);
+    updateHeading(country);
+    select('#countryDropdown').property('value', country);
   }
 
   onMount(() => {
@@ -26,19 +132,6 @@
       .attr('height', height)
       .append('g')
       .attr('transform', `translate(${margin.left},${margin.top})`);
-
-    const tooltip = select('body')
-      .append('div')
-      .attr('class', 'tooltip')
-      .style('opacity', 0)
-      .style('position', 'absolute')
-      .style('background-color', 'lightgray')
-      .style('border', '1px solid gray')
-      .style('padding', '5px')
-      .style('font-size', '16px')
-      .style('pointer-events', 'none')
-      .style('max-width', '200px')
-      .style('word-wrap', 'break-word');
 
     fetch("/drinks.csv")
       .then(response => response.text())
@@ -73,77 +166,6 @@
           updateChart(selectedCountry);
           updateHeading(selectedCountry);
         });
-
-        function updateChart(country) {
-          const countryData = data.find(d => d.country === country);
-          if (!countryData) {
-            console.error('Country not found in data.');
-            return;
-          }
-
-          const barData = [
-            { label: 'Beer Servings', value: countryData.beer_servings, color: '#a35108' },
-            { label: 'Spirit Servings', value: countryData.spirit_servings, color: '#a8e1e3' },
-            { label: 'Wine Servings', value: countryData.wine_servings, color: '#8a0101' },
-          ];
-
-          const x = scaleBand()
-            .range([0, innerWidth])
-            .domain(barData.map(d => d.label))
-            .padding(0.2);
-
-          svg.selectAll('*').remove();
-
-          svg.append('g')
-            .attr('transform', `translate(0,${innerHeight})`)
-            .call(axisBottom(x))
-            .selectAll('text')
-            .attr('transform', 'translate(-10,0)rotate(-45)')
-            .style('text-anchor', 'end')
-            .style('font-size', '14px')
-            .style('font-weight', 'bold');
-
-          const y = scaleLinear()
-            .domain([0, d3.max(barData, d => d.value)])
-            .nice()
-            .range([innerHeight, 0]);
-
-          svg.append('g')
-            .call(axisLeft(y))
-            .selectAll('text')
-            .style('font-weight', 'bold');
-
-          svg.selectAll('.bar')
-            .data(barData)
-            .enter()
-            .append('rect')
-            .attr('class', 'bar')
-            .attr('x', d => x(d.label))
-            .attr('width', x.bandwidth())
-            .attr('fill', d => d.color)
-            .attr('y', y(0))
-            .attr('height', d => innerHeight - y(0))
-            .on('mouseover', function(event, d) {
-              select(this).style('fill', 'orange');
-              tooltip.transition().duration(200).style('opacity', 0.9);
-              tooltip.html(`Annually in ${selectedCountry} the average amount of ${d.label.toLowerCase()} is ${d.value} servings.`)
-                .style('left', `${event.pageX + 5}px`)
-                .style('top', `${event.pageY - 28}px`);
-            })
-            .on('mousemove', function(event) {
-              tooltip.style('left', `${event.pageX + 5}px`)
-                .style('top', `${event.pageY - 28}px`);
-            })
-            .on('mouseout', function(event, d) {
-              select(this).style('fill', d.color);
-              tooltip.transition().duration(500).style('opacity', 0);
-            })
-            .transition()
-            .duration(800)
-            .attr('y', d => y(d.value))
-            .attr('height', d => innerHeight - y(d.value))
-            .delay((d, i) => i * 100);
-        }
       })
       .catch(error => {
         console.error('Error loading the CSV file:', error);
@@ -155,10 +177,6 @@
   .user {
     text-align: center;
     font-size: 18px;
-  }
-
-  .bar:hover {
-    fill: orange;
   }
 
   .axis text {
@@ -202,8 +220,50 @@
     margin: auto;
   }
 
-  .body-header {
-    text-align: center;
+  .sidebar {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-right: 20px;
+  }
+
+  .sidebar button {
+    margin-bottom: 10px;
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+
+  .grid line {
+    stroke: lightgrey;
+    stroke-opacity: 0.7;
+    shape-rendering: crispEdges;
+  }
+
+  .grid path {
+    stroke-width: 0;
+  }
+
+  .chart-area {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .content {
+    display: flex;
+    justify-content: center;
+  }
+
+  .buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 20px;
+  }
+
+  .buttons h3 {
+    margin-bottom: 10px;
   }
 </style>
 
@@ -235,9 +295,22 @@
   </p>
 
   <h2 id="chartHeading1">Alcohol Consumption in USA</h2>
-  <div>
-    <label for="countryDropdown">Select a country: </label>
-    <select id="countryDropdown"></select>
+
+  <div class="content">
+    <div class="chart-area">
+      <div>
+        <label for="countryDropdown">Select a country: </label>
+        <select id="countryDropdown"></select>
+      </div>
+      <div id="my_dataviz"></div>
+    </div>
+
+    <div class="sidebar">
+      <h3>Records</h3>
+      {#each buttonRecords as record}
+        <button on:click={() => handleButtonClick(record.country)}>{record.text}</button>
+      {/each}
+    </div>
   </div>
-  <div id="my_dataviz"></div>
 </div>
+
