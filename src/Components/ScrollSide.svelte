@@ -8,18 +8,45 @@
 
   // Paragraph text for scrolly
   $: steps = [
-    `<h1 class='step-title'>Step 1</h1>
+    `<h1 class='step-title'>The Early Beginnings</h1>
        <br><br>
       <p>
-       Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit sint aut corrupti ullam neque quia labore laborum perspiciatis, molestias amet at, voluptatem ratione quaerat in sit minima reprehenderit molestiae, nobis sed. Earum facere exercitationem sit rerum, expedita magni nihil alias?
+        While no one knows the exact beginnings of alcohol, 
+        the best evidence of alcohol’s origin comes from China, 
+        where the first makings of the beverage can be traced 
+        back to 7,000 BCE. With China as the known birthplace 
+        of alcohol, we wanted to kick off our story by seeing 
+        how modern day drinking habits fare up to documented 
+        history.
       </p>`,
-    `<h1 class='step-title'>Step 2</h1>
+    `<h1 class='step-title'>Popularity in Ancient Civilizations</h1>
+      <h3>Ancient Mesopotamia</h3>
       <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit sint aut corrupti ullam neque quia labore laborum perspiciatis, molestias amet at, voluptatem ratione quaerat in sit minima reprehenderit molestiae, nobis sed. Earum facere exercitationem sit rerum, expedita magni nihil alias?
-        </p>
-    <br><br>
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit sint aut corrupti ullam neque quia labore laborum perspiciatis, molestias amet at, voluptatem ratione quaerat in sit minima reprehenderit molestiae, nobis sed. Earum facere exercitationem sit rerum, expedita magni nihil alias?
-  `,
+         Over the course of the next few thousand years, 
+         it was discovered that other societies were developing
+          their own versions of alcohol. 
+          Ancient Mesopotamians and Egyptians were known for 
+          creating what we now know as beer. They cultivated 
+          this drink from harvesting cereal grain. The area 
+          known as Ancient Mesopotamia is now known as Iraq 
+          and Syria. From this ancient history, how do the beer 
+          drinking habits of Iraq, Syria, and Egypt compare now?
+      </p>`,
+    
+    `<h1 class='step-title'>Popularity in Ancient Civilizations</h1>
+      <h3>Ancient Greece</h3>
+      <p>
+         Wine was a much more common commodity in Ancient Greece due 
+         to the more suitable climate for grape cultivation. The pattern 
+         of creating fermented drinks out of harvested fruits in the 
+         environment became more common across the world. Some 
+         examples include the people of South America making Chicha, 
+         East Africans making beer out of bananas and palm, and 
+         people making sake out of rice in modern-day Japan. The 
+         creation of spirits would also become a hot commodity, 
+         eventually becoming a staple in international trade.
+
+      </p>`,
   ];
 
   const target2event = {
@@ -40,10 +67,9 @@
   $: if (typeof value !== "undefined") target2event[value]();
 </script>
 
-<h2 class="body-header">Side Scrolly Example</h2>
+<h2 class="body-header">Exploration Through the Centuries</h2>
 <p class="body-text">
-  Here's an example of a typical side-scroller. It's responsive, and will fold
-  to an overlap scroll if the screen gets small enough:
+  FILL WITH OUR OWN TEXT LATER
 </p>
 <section>
   <!-- scroll container -->
@@ -68,7 +94,7 @@
     </div>
   </div>
   <br /><br />
-  <p class="body-text">And that's the end of our scrolly.</p>
+  <p class="body-text">And that concludes the "history" lesson.</p>
 </section>
 
 <style>

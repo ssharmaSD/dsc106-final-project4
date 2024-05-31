@@ -1,18 +1,35 @@
 <script>
 </script>
 
+
 <section>
+<div class="intro-text">
+  <h1>
+    Introduction
+  </h1>
+
+
   <p class="body-text">
-    Lorem ipsum dolor sit amet <a href="https://dsc106.com/">random link</a> adipisicing elit. Esse
-    dolor nobis
-    <span class="bold">bold text</span> eius voluptate distinctio odit ut quod illo!
-    Nulla consequatur fugiat quia commodi aspernatur necessitatibus est doloremque
-    quam vitae dolorem. Vitae natus ipsum animi officiis et quis obcaecati in molestiae
-    aperiam, perferendis odio a ipsam nam suscipit laboriosam corporis excepturi
-    quisquam? Ratione delectus repellat error maxime quo beatae ullam, quod
+    Our story takes us through a global history of alcohol consumption around 
+    the world to see how this parallels with what we see in our graphics.
   </p>
-  <p class="body-text">This is a trr</p>
+
+  <p class="body-text">
+    <strong>insert more background history on our motivations and initial discoveries
+    this is the exposition of our story</strong>
+  </p>
+
+</div>
 </section>
 
+
 <style>
+.intro-text{
+  text-align: center;
+}
+
+
 </style>
+
+
+

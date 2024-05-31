@@ -180,13 +180,13 @@
   }
 </style>
 
-<h1 class="body-header">Alcohol Type Consumption by Country</h1>
+<h1 class="body-header">Alcohol Type Consumption by Country in Modern Day</h1>
 
 <p class="body-text">
   With an understanding of how alcohol consumption began in ancient times, let us explore how it looks in modern day.
 </p>
 
-<p class="body-text">
+<p id="user">
   <strong>Now it's your turn to explore!</strong>
 </p>
 
@@ -213,5 +213,11 @@
 </div>
 <h2 id="chartHeading">Alcohol Consumption in USA</h2>
 <div id="my_dataviz"></div>
+
+<style>
+  #user {
+    text-align: center;
+  }
+</style>
 
 
