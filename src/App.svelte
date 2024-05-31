@@ -13,9 +13,9 @@
 <Meta />
 <Title />
 <Intro />
-<TextAndMathEquations />
+
 <ScrollSide />
 <BarChart />
-<ScrollCenter />
+
 <Conclusion />
 <Resources />

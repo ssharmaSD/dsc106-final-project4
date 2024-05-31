@@ -45949,25 +45949,19 @@ var app = (function () {
     	let t1;
     	let intro;
     	let t2;
-    	let textandmathequations;
-    	let t3;
     	let scrollside;
-    	let t4;
+    	let t3;
     	let barchart;
-    	let t5;
-    	let scrollcenter;
-    	let t6;
+    	let t4;
     	let conclusion;
-    	let t7;
+    	let t5;
     	let resources;
     	let current;
     	meta = new Meta({ $$inline: true });
     	title = new Title({ $$inline: true });
     	intro = new Intro({ $$inline: true });
-    	textandmathequations = new TextAndMathEquations({ $$inline: true });
     	scrollside = new ScrollSide({ $$inline: true });
     	barchart = new BarChart({ $$inline: true });
-    	scrollcenter = new ScrollCenter({ $$inline: true });
     	conclusion = new Conclusion({ $$inline: true });
     	resources = new Resources({ $$inline: true });
 
@@ -45979,16 +45973,12 @@ var app = (function () {
     			t1 = space();
     			create_component(intro.$$.fragment);
     			t2 = space();
-    			create_component(textandmathequations.$$.fragment);
-    			t3 = space();
     			create_component(scrollside.$$.fragment);
-    			t4 = space();
+    			t3 = space();
     			create_component(barchart.$$.fragment);
-    			t5 = space();
-    			create_component(scrollcenter.$$.fragment);
-    			t6 = space();
+    			t4 = space();
     			create_component(conclusion.$$.fragment);
-    			t7 = space();
+    			t5 = space();
     			create_component(resources.$$.fragment);
     		},
     		l: function claim(nodes) {
@@ -46001,16 +45991,12 @@ var app = (function () {
     			insert_dev(target, t1, anchor);
     			mount_component(intro, target, anchor);
     			insert_dev(target, t2, anchor);
-    			mount_component(textandmathequations, target, anchor);
-    			insert_dev(target, t3, anchor);
     			mount_component(scrollside, target, anchor);
-    			insert_dev(target, t4, anchor);
+    			insert_dev(target, t3, anchor);
     			mount_component(barchart, target, anchor);
-    			insert_dev(target, t5, anchor);
-    			mount_component(scrollcenter, target, anchor);
-    			insert_dev(target, t6, anchor);
+    			insert_dev(target, t4, anchor);
     			mount_component(conclusion, target, anchor);
-    			insert_dev(target, t7, anchor);
+    			insert_dev(target, t5, anchor);
     			mount_component(resources, target, anchor);
     			current = true;
     		},
@@ -46020,10 +46006,8 @@ var app = (function () {
     			transition_in(meta.$$.fragment, local);
     			transition_in(title.$$.fragment, local);
     			transition_in(intro.$$.fragment, local);
-    			transition_in(textandmathequations.$$.fragment, local);
     			transition_in(scrollside.$$.fragment, local);
     			transition_in(barchart.$$.fragment, local);
-    			transition_in(scrollcenter.$$.fragment, local);
     			transition_in(conclusion.$$.fragment, local);
     			transition_in(resources.$$.fragment, local);
     			current = true;
@@ -46032,10 +46016,8 @@ var app = (function () {
     			transition_out(meta.$$.fragment, local);
     			transition_out(title.$$.fragment, local);
     			transition_out(intro.$$.fragment, local);
-    			transition_out(textandmathequations.$$.fragment, local);
     			transition_out(scrollside.$$.fragment, local);
     			transition_out(barchart.$$.fragment, local);
-    			transition_out(scrollcenter.$$.fragment, local);
     			transition_out(conclusion.$$.fragment, local);
     			transition_out(resources.$$.fragment, local);
     			current = false;
@@ -46047,16 +46029,12 @@ var app = (function () {
     			if (detaching) detach_dev(t1);
     			destroy_component(intro, detaching);
     			if (detaching) detach_dev(t2);
-    			destroy_component(textandmathequations, detaching);
-    			if (detaching) detach_dev(t3);
     			destroy_component(scrollside, detaching);
-    			if (detaching) detach_dev(t4);
+    			if (detaching) detach_dev(t3);
     			destroy_component(barchart, detaching);
-    			if (detaching) detach_dev(t5);
-    			destroy_component(scrollcenter, detaching);
-    			if (detaching) detach_dev(t6);
+    			if (detaching) detach_dev(t4);
     			destroy_component(conclusion, detaching);
-    			if (detaching) detach_dev(t7);
+    			if (detaching) detach_dev(t5);
     			destroy_component(resources, detaching);
     		}
     	};
