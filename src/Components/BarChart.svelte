@@ -191,19 +191,15 @@
 </p>
 
 <p class="body-text">
-  <strong>Choose a country from the dropdown/type it in the box**</strong> 
+  Choose a country from the dropdown 
   to generate a bar chart describing different consumptions rates of different 
   alcohol types of your chosen country.
+  
 </p>
 
 <p class="body-text">
   The original data set can be found from this 
   <a href="https://github.com/fivethirtyeight/data/tree/master/alcohol-consumption">fivethirtyeight</a> link. 
-</p>
-
-<p class="body-text">
-  <strong>**</strong>For this prototype our bar chart only shows information for one hard-coded
-  country and we hope to improve the interaction of this in the final model.
 </p>
 
 <p class="body-text">
