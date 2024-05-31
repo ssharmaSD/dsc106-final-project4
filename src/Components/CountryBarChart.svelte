@@ -157,7 +157,6 @@
     font-size: 18px;
   }
 
-
   .bar:hover {
     fill: orange;
   }
@@ -184,41 +183,57 @@
     max-width: 200px;
     word-wrap: break-word;
   }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  #my_dataviz {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  svg {
+    display: block;
+    margin: auto;
+  }
 </style>
 
-<h1 class="body-header">Alcohol Type Consumption by Country in Modern Day</h1>
+<div class="container">
+  <h1 class="body-header">Alcohol Type Consumption by Country in Modern Day</h1>
 
-<p class="body-text">
-  With an understanding of how alcohol consumption began in ancient times, let us explore how it looks in modern day.
-</p>
+  <p class="body-text">
+    With an understanding of how alcohol consumption began in ancient times, let us explore how it looks in modern day.
+  </p>
 
-<p class="user">
-  <strong>Now it's your turn to explore!</strong>
-</p>
+  <p class="user">
+    <strong>Now it's your turn to explore!</strong>
+  </p>
 
-<p class="body-text">
-  Choose a country from the dropdown 
-  to generate a bar chart describing different consumptions rates of different 
-  alcohol types of your chosen country.
-  
-</p>
+  <p class="body-text">
+    Choose a country from the dropdown 
+    to generate a bar chart describing different consumption rates of different 
+    alcohol types of your chosen country.
+  </p>
 
-<p class="body-text">
-  The original data set can be found from this 
-  <a href="https://github.com/fivethirtyeight/data/tree/master/alcohol-consumption">fivethirtyeight</a> link. 
-</p>
+  <p class="body-text">
+    The original data set can be found from this 
+    <a href="https://github.com/fivethirtyeight/data/tree/master/alcohol-consumption">fivethirtyeight</a> link. 
+  </p>
 
-<p class="body-text">
-  <strong>Note:</strong> We have had a lot of trouble trying to get this bar chart to center,
-  any guidance that could be provided on this would be greatly appreciated. Thanks!
-</p>
+  <p class="body-text">
+    <strong>Note:</strong> We have had a lot of trouble trying to get this bar chart to center,
+    any guidance that could be provided on this would be greatly appreciated. Thanks!
+  </p>
 
-<div>
-  <label for="countryDropdown">Select a country: </label>
-  <select id="countryDropdown"></select>
+  <h2 id="chartHeading">Alcohol Consumption in USA</h2>
+  <div>
+    <label for="countryDropdown">Select a country: </label>
+    <select id="countryDropdown"></select>
+  </div>
+  <div id="my_dataviz"></div>
 </div>
-<h2 id="chartHeading">Alcohol Consumption in USA</h2>
-<div id="my_dataviz"></div>
-
-
-
