@@ -152,6 +152,12 @@
 </script>
 
 <style>
+  .user {
+    text-align: center;
+    font-size: 18px;
+  }
+
+
   .bar:hover {
     fill: orange;
   }
@@ -186,7 +192,7 @@
   With an understanding of how alcohol consumption began in ancient times, let us explore how it looks in modern day.
 </p>
 
-<p id="user">
+<p class="user">
   <strong>Now it's your turn to explore!</strong>
 </p>
 
