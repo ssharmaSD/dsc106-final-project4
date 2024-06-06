@@ -220,28 +220,10 @@
 
 <div class="container">
   <h1 class="body-header">Alcohol Type Consumption by Continent in Modern Day</h1>
-  <p class="body-text">
-    With an understanding of how alcohol consumption began in ancient times, let us explore how it looks in modern day.
-  </p>
-
-  <p class="user">
-    <strong>Now it's your turn to explore!</strong>
-  </p>
 
   <p class="body-text">
-    Choose a continent from the dropdown 
-    to generate a bar chart describing different consumption rates of different 
-    alcohol types of your chosen continent.
-  </p>
-
-  <p class="body-text">
-    The original data set can be found from this 
-    <a href="https://github.com/fivethirtyeight/data/tree/master/alcohol-consumption">fivethirtyeight</a> link. 
-  </p>
-
-  <p class="body-text">
-    <strong>Note:</strong> We have had a lot of trouble trying to get this bar chart to center,
-    any guidance that could be provided on this would be greatly appreciated. Thanks!
+    This visual is similar to the previous bar chart except it is designed to show trends by continent. 
+    See if you can find out which continents have the highest and lowest consumptions of alcohol! 
   </p>
 
   <h2 id="chartHeading">Alcohol Consumption in North America</h2>

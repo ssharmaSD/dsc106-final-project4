@@ -289,11 +289,6 @@
     <a href="https://github.com/fivethirtyeight/data/tree/master/alcohol-consumption">fivethirtyeight</a> link. 
   </p>
 
-  <p class="body-text">
-    <strong>Note:</strong> We have had a lot of trouble trying to get this bar chart to center,
-    any guidance that could be provided on this would be greatly appreciated. Thanks!
-  </p>
-
   <h2 id="chartHeading1">Alcohol Consumption in USA</h2>
 
   <div class="content">
