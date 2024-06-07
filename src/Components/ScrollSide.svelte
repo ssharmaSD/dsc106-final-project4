@@ -68,9 +68,6 @@
 </script>
 
 <h2 class="body-header">Exploration Through the Centuries</h2>
-<p class="body-text">
-  FILL WITH OUR OWN TEXT LATER
-</p>
 <section>
   <!-- scroll container -->
   <div class="section-container">
@@ -94,7 +91,7 @@
     </div>
   </div>
   <br /><br />
-  <p class="body-text">And that concludes the "history" lesson.</p>
+  <p class="body-text">And that concludes the history lesson.</p>
 </section>
 
 <style>

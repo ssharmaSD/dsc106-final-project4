@@ -15,11 +15,10 @@
   }
 
   #intro-hed {
-    font-size: 4rem;
+    font-size: 3rem;
     margin-top: 5px;
     margin-bottom: 0;
     letter-spacing: 1.5px;
-    text-transform: uppercase;
     max-width: 100%;
     margin: auto;
     color: var(--squid-ink);
@@ -36,7 +35,7 @@
   }
 
   #intro__date {
-    font-size: 1.1rem;
+    font-size: 1.5rem;
     color: var(--squid-ink);
     margin: 0px;
     margin-top: 15px;
