@@ -1,5 +1,5 @@
 <section id="resources">
-  <h3 class="body-header">References + Open Source</h3>
+  <h3 class="body-header">Acknowledgements</h3>
   <p class="body-text">
     Presenting this project was made possible by the following resources:
     <br /><br />
