@@ -1,5 +1,6 @@
 <script>
   import Scrolly from "./Scrolly.svelte";
+  import Chart from "./Chart.svelte";
   import katexify from "../katexify";
   import { select, selectAll } from "d3-selection";
 
