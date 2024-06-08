@@ -17,7 +17,9 @@
         back to 7,000 BCE. With China as the known birthplace 
         of alcohol, we wanted to kick off our story by seeing 
         how modern day drinking habits fare up to documented 
-        history.
+        history. Out of the 193 countries we have data on, China 
+        currently ranks 75th in average consumption of all alcoholic 
+        beverages, despite being its known birthplace.
       </p>`,
     `<h1 class='step-title'>Popularity in Ancient Civilizations</h1>
       <h3>Ancient Mesopotamia</h3>
@@ -31,20 +33,37 @@
           known as Ancient Mesopotamia is now known as Iraq 
           and Syria. From this ancient history, how do the beer 
           drinking habits of Iraq, Syria, and Egypt compare now?
+
+          Through exploring the dataset, it appears that despite being 
+          the cultivators of beer, the modern day countries are among 
+          the bottom ranked when it comes to average yearly beer 
+          consumption. Iraq is 160th, Egypt is 165th, and Syria is 
+          169th when it comes to beer consumption out of 193 countries.
       </p>`,
     
     `<h1 class='step-title'>Popularity in Ancient Civilizations</h1>
       <h3>Ancient Greece</h3>
       <p>
          Wine was a much more common commodity in Ancient Greece due 
-         to the more suitable climate for grape cultivation. The pattern 
-         of creating fermented drinks out of harvested fruits in the 
-         environment became more common across the world. Some 
-         examples include the people of South America making Chicha, 
+         to the more suitable climate for grape cultivation. This has 
+         prompted the nation of Greece to be the 13th highest country 
+         when it comes to average yearly wine consumption in the world, 
+         being beaten out by fellow European countries such as France, 
+         Andorra, and Italy. The pattern of creating fermented drinks 
+         out of harvested fruits in the environment became more common 
+         across the world. 
+         
+         Some examples include the people of South America making Chicha, 
          East Africans making beer out of bananas and palm, and 
          people making sake out of rice in modern-day Japan. The 
          creation of spirits would also become a hot commodity, 
          eventually becoming a staple in international trade.
+         Due to the presence of spirit trade on an international level, 
+         we thought it would be of interest to understand spirit consumption 
+         across all continents. The continent coming out on top with spirit 
+         consumption is Europe at an average of 5,286 spirits. Europe is 
+         followed by Asia, then North America, South America, Africa, 
+         then Oceania.
 
       </p>`,
   ];
